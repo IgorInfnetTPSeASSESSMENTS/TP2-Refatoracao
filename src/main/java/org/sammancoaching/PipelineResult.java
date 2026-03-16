@@ -9,14 +9,6 @@ public class PipelineResult {
         this.status = status;
     }
 
-    public PipelineStatus getStatus() {
-        return status;
-    }
-
-    public boolean isSuccess() {
-        return status == PipelineStatus.SUCCESS;
-    }
-
     public String getEmailMessage() {
         return switch (status) {
             case SUCCESS -> "Deployment completed successfully";

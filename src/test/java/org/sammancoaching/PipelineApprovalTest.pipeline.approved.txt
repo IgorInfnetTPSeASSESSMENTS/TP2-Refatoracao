@@ -1,62 +1,404 @@
-[PASSING_TESTS, true, true] => 
+[PASSING_TESTS, true, true, PASSING_TESTS, true] => 
 INFO: Tests passed
-INFO: Deployment successful
+INFO: Staging deployment successful
+INFO: Smoke tests passed
+INFO: Production deployment successful
 INFO: Sending email
 Email message: Deployment completed successfully
  
-[PASSING_TESTS, true, false] => 
+[PASSING_TESTS, true, true, PASSING_TESTS, false] => 
 INFO: Tests passed
-ERROR: Deployment failed
+INFO: Staging deployment successful
+INFO: Smoke tests passed
+ERROR: Production deployment failed
 INFO: Sending email
-Email message: Deployment failed
+Email message: Pipeline failed - production deployment failed
  
-[PASSING_TESTS, false, true] => 
+[PASSING_TESTS, true, true, NO_TESTS, true] => 
 INFO: Tests passed
-INFO: Deployment successful
+INFO: Staging deployment successful
+ERROR: No smoke tests
+INFO: Sending email
+Email message: Pipeline failed - no smoke tests
+ 
+[PASSING_TESTS, true, true, NO_TESTS, false] => 
+INFO: Tests passed
+INFO: Staging deployment successful
+ERROR: No smoke tests
+INFO: Sending email
+Email message: Pipeline failed - no smoke tests
+ 
+[PASSING_TESTS, true, true, FAILING_TESTS, true] => 
+INFO: Tests passed
+INFO: Staging deployment successful
+ERROR: Smoke tests failed
+INFO: Sending email
+Email message: Pipeline failed - smoke tests failed
+ 
+[PASSING_TESTS, true, true, FAILING_TESTS, false] => 
+INFO: Tests passed
+INFO: Staging deployment successful
+ERROR: Smoke tests failed
+INFO: Sending email
+Email message: Pipeline failed - smoke tests failed
+ 
+[PASSING_TESTS, true, false, PASSING_TESTS, true] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[PASSING_TESTS, true, false, PASSING_TESTS, false] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[PASSING_TESTS, true, false, NO_TESTS, true] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[PASSING_TESTS, true, false, NO_TESTS, false] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[PASSING_TESTS, true, false, FAILING_TESTS, true] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[PASSING_TESTS, true, false, FAILING_TESTS, false] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[PASSING_TESTS, false, true, PASSING_TESTS, true] => 
+INFO: Tests passed
+INFO: Staging deployment successful
+INFO: Smoke tests passed
+INFO: Production deployment successful
 INFO: Email disabled
  
-[PASSING_TESTS, false, false] => 
+[PASSING_TESTS, false, true, PASSING_TESTS, false] => 
 INFO: Tests passed
-ERROR: Deployment failed
+INFO: Staging deployment successful
+INFO: Smoke tests passed
+ERROR: Production deployment failed
 INFO: Email disabled
  
-[NO_TESTS, true, true] => 
+[PASSING_TESTS, false, true, NO_TESTS, true] => 
+INFO: Tests passed
+INFO: Staging deployment successful
+ERROR: No smoke tests
+INFO: Email disabled
+ 
+[PASSING_TESTS, false, true, NO_TESTS, false] => 
+INFO: Tests passed
+INFO: Staging deployment successful
+ERROR: No smoke tests
+INFO: Email disabled
+ 
+[PASSING_TESTS, false, true, FAILING_TESTS, true] => 
+INFO: Tests passed
+INFO: Staging deployment successful
+ERROR: Smoke tests failed
+INFO: Email disabled
+ 
+[PASSING_TESTS, false, true, FAILING_TESTS, false] => 
+INFO: Tests passed
+INFO: Staging deployment successful
+ERROR: Smoke tests failed
+INFO: Email disabled
+ 
+[PASSING_TESTS, false, false, PASSING_TESTS, true] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[PASSING_TESTS, false, false, PASSING_TESTS, false] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[PASSING_TESTS, false, false, NO_TESTS, true] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[PASSING_TESTS, false, false, NO_TESTS, false] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[PASSING_TESTS, false, false, FAILING_TESTS, true] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[PASSING_TESTS, false, false, FAILING_TESTS, false] => 
+INFO: Tests passed
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[NO_TESTS, true, true, PASSING_TESTS, true] => 
 INFO: No tests
-INFO: Deployment successful
+INFO: Staging deployment successful
+INFO: Smoke tests passed
+INFO: Production deployment successful
 INFO: Sending email
 Email message: Deployment completed successfully
  
-[NO_TESTS, true, false] => 
+[NO_TESTS, true, true, PASSING_TESTS, false] => 
 INFO: No tests
-ERROR: Deployment failed
+INFO: Staging deployment successful
+INFO: Smoke tests passed
+ERROR: Production deployment failed
 INFO: Sending email
-Email message: Deployment failed
+Email message: Pipeline failed - production deployment failed
  
-[NO_TESTS, false, true] => 
+[NO_TESTS, true, true, NO_TESTS, true] => 
 INFO: No tests
-INFO: Deployment successful
+INFO: Staging deployment successful
+ERROR: No smoke tests
+INFO: Sending email
+Email message: Pipeline failed - no smoke tests
+ 
+[NO_TESTS, true, true, NO_TESTS, false] => 
+INFO: No tests
+INFO: Staging deployment successful
+ERROR: No smoke tests
+INFO: Sending email
+Email message: Pipeline failed - no smoke tests
+ 
+[NO_TESTS, true, true, FAILING_TESTS, true] => 
+INFO: No tests
+INFO: Staging deployment successful
+ERROR: Smoke tests failed
+INFO: Sending email
+Email message: Pipeline failed - smoke tests failed
+ 
+[NO_TESTS, true, true, FAILING_TESTS, false] => 
+INFO: No tests
+INFO: Staging deployment successful
+ERROR: Smoke tests failed
+INFO: Sending email
+Email message: Pipeline failed - smoke tests failed
+ 
+[NO_TESTS, true, false, PASSING_TESTS, true] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[NO_TESTS, true, false, PASSING_TESTS, false] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[NO_TESTS, true, false, NO_TESTS, true] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[NO_TESTS, true, false, NO_TESTS, false] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[NO_TESTS, true, false, FAILING_TESTS, true] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[NO_TESTS, true, false, FAILING_TESTS, false] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Sending email
+Email message: Pipeline failed - staging deployment failed
+ 
+[NO_TESTS, false, true, PASSING_TESTS, true] => 
+INFO: No tests
+INFO: Staging deployment successful
+INFO: Smoke tests passed
+INFO: Production deployment successful
 INFO: Email disabled
  
-[NO_TESTS, false, false] => 
+[NO_TESTS, false, true, PASSING_TESTS, false] => 
 INFO: No tests
-ERROR: Deployment failed
+INFO: Staging deployment successful
+INFO: Smoke tests passed
+ERROR: Production deployment failed
 INFO: Email disabled
  
-[FAILING_TESTS, true, true] => 
+[NO_TESTS, false, true, NO_TESTS, true] => 
+INFO: No tests
+INFO: Staging deployment successful
+ERROR: No smoke tests
+INFO: Email disabled
+ 
+[NO_TESTS, false, true, NO_TESTS, false] => 
+INFO: No tests
+INFO: Staging deployment successful
+ERROR: No smoke tests
+INFO: Email disabled
+ 
+[NO_TESTS, false, true, FAILING_TESTS, true] => 
+INFO: No tests
+INFO: Staging deployment successful
+ERROR: Smoke tests failed
+INFO: Email disabled
+ 
+[NO_TESTS, false, true, FAILING_TESTS, false] => 
+INFO: No tests
+INFO: Staging deployment successful
+ERROR: Smoke tests failed
+INFO: Email disabled
+ 
+[NO_TESTS, false, false, PASSING_TESTS, true] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[NO_TESTS, false, false, PASSING_TESTS, false] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[NO_TESTS, false, false, NO_TESTS, true] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[NO_TESTS, false, false, NO_TESTS, false] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[NO_TESTS, false, false, FAILING_TESTS, true] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[NO_TESTS, false, false, FAILING_TESTS, false] => 
+INFO: No tests
+ERROR: Staging deployment failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, true, true, PASSING_TESTS, true] => 
 ERROR: Tests failed
 INFO: Sending email
-Email message: Tests failed
+Email message: Pipeline failed - tests failed
  
-[FAILING_TESTS, true, false] => 
+[FAILING_TESTS, true, true, PASSING_TESTS, false] => 
 ERROR: Tests failed
 INFO: Sending email
-Email message: Tests failed
+Email message: Pipeline failed - tests failed
  
-[FAILING_TESTS, false, true] => 
+[FAILING_TESTS, true, true, NO_TESTS, true] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, true, true, NO_TESTS, false] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, true, true, FAILING_TESTS, true] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, true, true, FAILING_TESTS, false] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, true, false, PASSING_TESTS, true] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, true, false, PASSING_TESTS, false] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, true, false, NO_TESTS, true] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, true, false, NO_TESTS, false] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, true, false, FAILING_TESTS, true] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, true, false, FAILING_TESTS, false] => 
+ERROR: Tests failed
+INFO: Sending email
+Email message: Pipeline failed - tests failed
+ 
+[FAILING_TESTS, false, true, PASSING_TESTS, true] => 
 ERROR: Tests failed
 INFO: Email disabled
  
-[FAILING_TESTS, false, false] => 
+[FAILING_TESTS, false, true, PASSING_TESTS, false] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, true, NO_TESTS, true] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, true, NO_TESTS, false] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, true, FAILING_TESTS, true] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, true, FAILING_TESTS, false] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, false, PASSING_TESTS, true] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, false, PASSING_TESTS, false] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, false, NO_TESTS, true] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, false, NO_TESTS, false] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, false, FAILING_TESTS, true] => 
+ERROR: Tests failed
+INFO: Email disabled
+ 
+[FAILING_TESTS, false, false, FAILING_TESTS, false] => 
 ERROR: Tests failed
 INFO: Email disabled
  
